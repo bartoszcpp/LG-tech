@@ -1,0 +1,783 @@
+/*
+Theme Name: LG-Tech motyw strony
+Theme URI: https://bartoszcpp.pl
+Author: Bartosz Ciąpała
+Author URI: https://bartoszcpp.pl
+Description: Autor: Bartosz Ciąpała
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: LG-Tech
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Normalize
+2.0 Accessibility
+3.0 Alignments
+4.0 Clearings
+5.0 Typography
+6.0 Forms
+7.0 Formatting
+8.0 Lists
+9.0 Tables
+10.0 Links
+11.0 Featured Image Hover
+12.0 Navigation
+13.0 Layout
+   13.1 Header
+   13.2 Front Page
+   13.3 Regular Content
+   13.4 Posts
+   13.5 Pages
+   13.6 Footer
+14.0 Comments
+15.0 Widgets
+16.0 Media
+   16.1 Galleries
+17.0 Customizer
+18.0 SVGs Fallbacks
+19.0 Media Queries
+20.0 Print
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Normalize
+Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
+--------------------------------------------------------------*/
+
+
+body, html
+{
+    font-family: 'Montserrat', sans-serif;
+    background-color:white;
+    height: 100%;
+    width: 100%;
+}
+
+.own-grid
+{
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section1
+{
+    width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 0!important;
+    padding-left: 50px;
+    padding-right: 50px;
+	padding-top:50px!important;
+	margin-bottom:0!important;
+	padding-bottom:30px!important;
+}
+
+.av
+{
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.udu
+{
+    background-color: #252625;
+}
+
+.textwidget a
+{
+    color: aqua;
+}
+
+.container-fluid
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#no-margin
+{
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+.menu
+{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    padding-right:25px;
+    font-family: 'Volkhov', serif;
+}
+
+.menu1
+{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    font-family: 'Volkhov', serif;
+}
+
+
+
+.logo h1
+{
+    margin: 0;
+}
+
+.navigation
+{
+    background-color: #565654;
+    box-shadow: -1px 2px 7px -2px rgba(163,171,176,1);
+}
+
+.navbar-brand
+{
+    margin-right: 0;
+}
+
+.navbar
+{
+    padding: 0;
+}
+
+.kontakt
+{
+    padding-left: 0px; /*poprawic w media*/
+    text-align: left;
+    padding: 20px;
+}
+
+.small
+{
+    font-size: 14px;
+}
+
+.border
+{
+    margin-top: 40px;
+    border: 2px solid #626262 !important;
+}
+
+.header-image
+{
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70%;
+}
+
+.header1
+{
+   position: relative;
+   width: 100%;
+   z-index: 2000;
+}
+
+.social
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 1000px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hovereffect {
+    width:auto;
+    height:auto;
+    overflow:hidden;
+    position:relative;
+    text-align:center;
+    cursor:default;
+    color:#131517;
+}
+
+.hovereffect .overlay {
+width:100%;
+height:100%;
+position:absolute;
+overflow:hidden;
+top:0;
+left:0;
+opacity:0;
+background-color:rgba(0,0,0,0.5);
+-webkit-transition:all .4s ease-in-out;
+transition:all .4s ease-in-out
+}
+
+.hovereffect img {
+display:block;
+position:relative;
+max-width: none;
+width: calc(100% + 60px);
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+}
+
+.hovereffect h2 {
+text-transform:uppercase;
+color:#fff;
+text-align:center;
+position:relative;
+font-size:17px;
+background:rgba(0,0,0,0.6);
+-webkit-transform:translatey(-100px);
+-ms-transform:translatey(-100px);
+transform:translatey(-100px);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+padding:10px;
+}
+
+.hovereffect a.info {
+text-decoration:none;
+display:inline-block;
+text-transform:uppercase;
+color:#fff;
+border:1px solid #fff;
+background-color:transparent;
+opacity:0;
+filter:alpha(opacity=0);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+margin:50px 0 0;
+padding:7px 14px;
+}
+
+.hovereffect a.info:hover {
+box-shadow:0 0 5px #fff;
+}
+
+.hovereffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+opacity:1;
+filter:alpha(opacity=100);
+}
+
+.hovereffect:hover h2,.hovereffect:hover a.info {
+opacity:1;
+filter:alpha(opacity=100);
+-ms-transform:translatey(0);
+-webkit-transform:translatey(0);
+transform:translatey(0);
+}
+
+.hovereffect:hover a.info {
+-webkit-transition-delay:.2s;
+transition-delay:.2s;
+}
+
+.dec
+{
+    padding-top: 20px;
+	background-color: #32333b;
+	background-image: url(img/abc.png); 
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center center;
+}
+
+.footer
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+     color: rgb(255, 255, 255);
+}
+
+.footer p
+{
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.footer h2
+{
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.text a
+{
+	color: white;
+}
+
+.text a:hover
+{
+	text-decoration: none;
+	
+}
+
+.left
+{
+    text-align: left;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 38px;
+}
+
+.lr
+{
+    padding: 20px;
+    text-align: center;
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+.nav-link
+{
+    padding: 15px;
+}
+
+
+.icon
+{
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 100% 80%, 80% 100%, 20% 100%, 0 80%, 0% 30%);
+}
+
+.icon a
+{
+    color: inherit;
+}
+
+.icon:hover
+{
+    color: #252625;
+}
+
+.icon a:hover
+{
+    text-decoration: none
+}
+
+.icon i
+{
+    font-size:85px
+}
+
+.boxer
+{
+    -webkit-box-shadow: 9px 9px 16px -11px rgba(0,0,0,0.97); 
+    box-shadow: 9px 9px 16px -11px rgba(0,0,0,0.97);
+}
+
+.desc
+{
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.desc p
+{
+    font-size: 15px;
+}
+
+.option
+{
+  
+    background-color: #565654;
+}
+
+#col-center
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sticky.is-sticky {
+     position:fixed;
+    z-index: 5000;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebar-sticky
+{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+}
+
+.yty
+{
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+.wpis a
+{
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.94);
+}
+
+.entry-gallery
+{
+    margin-top: 40px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.entry-gallery h3
+{
+    color: white;
+}
+
+.wp-block-embed-youtube
+{
+    margin-bottom: 0!important;
+}
+
+/*--------------------------------responsive video----------------------------*/
+
+.wp-block-embed__wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+.wp-block-embed__wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*--------------------------------/responsive video----------------------------*/
+
+/*--------------------------------kontakt----------------------------*/
+
+.contact
+{
+    margin-bottom: 0;
+    margin-top:  0;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+
+.contact>.col-md-3
+{
+    line-height: 21px;
+}
+
+/*--------------------------------/kontakt----------------------------*/
+
+
+/*--------------------------------systemowe--------------------------*/
+
+.wp-block-gallery
+{
+    margin-bottom: 0!important;
+}
+
+.form-control
+{
+    background-color: #494a49!important;
+    border: 1px solid #181818!important;
+	color: white!important;
+}
+
+.btn-success, .btn-primary
+{
+    background-color: #494a49;
+    border-color: #181818;
+    margin-bottom: 8px;
+    margin-top: 30px;
+}
+
+.btn-success:active, .btn-primary:active
+{
+    background-color: #494a49!important;
+    border-color: #181818!important;
+        box-shadow: none!important;
+}
+
+.btn-success:hover, .btn-primary:hover
+{
+    background-color: #181818;
+    border-color: #181818;
+}
+
+.content-page p
+{
+	color: white;
+	padding: 30px;
+	margin-bottom:20px;
+}
+
+.um .um-field-label {
+    color: white!important;
+}
+
+.um-form-field
+{
+	background-color:#494a49!important;
+	color: white!important;
+	
+}
+
+#um-submit-btn
+{
+	background-color:#494a49!important;
+}
+
+.um-icon-android-checkbox-outline
+{
+		color:#494a49!important;
+}
+
+.um
+{
+	margin-bottom:0!important;
+	padding-bottom: 30px!important;
+}
+
+.kolorwhite
+{
+	color:white!important;
+}
+
+.kolorwhite p
+{
+	padding-bottom:15px!important;
+}
+
+/*--------------------------------/systemowe--------------------------*/
+
+@media (max-width: 1129px)
+{
+  
+    .text p
+    {
+        font-size: 14px;
+    }
+
+    .text h1
+    {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 992px)
+{
+     .text p
+    {
+        font-size: 12px;
+    }
+
+    .text h1
+    {
+        font-size: 36px;
+    }
+}
+@media (max-width: 767px)
+{   
+     .text p
+    {
+        font-size: 16px;
+    }
+
+    .text h1
+    {
+        font-size: 32px;
+    }
+    
+    .kontakt
+    {
+        text-align: center;
+    }
+    
+    .left
+    {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+
+/*--------------------------------media------------------------------*/
+
+@media (max-width: 1160px)
+{
+    .section1
+    {
+         width: auto;
+    }
+    
+}
+
+@media (max-width: 1015px)
+{
+    .social
+    {
+         width: auto;
+    }
+    
+}
+
+@media (max-width: 1160px)
+{
+    .section1
+    {
+         width: auto;
+    }
+}
+
+@media (max-width: 1130px)
+{
+    .fus
+    {
+        font-size: 27px;
+    }
+    .text1 h3
+    {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 618px) {
+    .napis h1
+    {
+        font-size: 20px;
+    }
+
+    .napis h2
+    {
+        font-size: 12px;
+    }
+    
+    .header-image
+    {
+        max-height: 330px;
+    }
+    
+    .icon i
+    {
+        font-size: 60px;
+    }
+}
+/* Extra small devices (phones, up to 480px) */
+@media (min-width: 618px) and (max-width: 817px) {
+    .napis h1
+    {
+        font-size: 30px;
+    }
+
+    .napis h2
+    {
+        font-size: 18px;
+    }
+    
+    
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 817px) and (max-width: 991px) {
+    .napis h1
+    {
+        font-size: 40px;
+    }
+
+    .napis h2
+    {
+        font-size: 24px;
+    }
+    
+    
+}
+/* tablets/desktops and up ----------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .napis h1
+    {
+        font-size: 45px;
+    }
+
+    .napis h2
+    {
+        font-size: 28px;
+    }
+    
+}
+/* large desktops and up ----------- */
+@media screen and (min-width: 1200px) {
+    .napis h1
+    {
+        font-size: 50px;
+    }
+
+    .napis h2
+    {
+        font-size: 30px;
+    }
+    
+   
+}
+
+@media (min-width: 786px)
+{
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+@media (min-width: 768px)
+{
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+   
+    .dropdown-toggle::after {
+    display:none;
+    }
+    
+    .dropdown:hover>.dropdown-menu
+    {
+        display: block;
+    }
+}
+
+@media (max-width: 768px)
+{
+    .lr
+    {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 860px)
+{
+    .desc p
+    {
+        font-size: 13px;
+    }
+    
+}
